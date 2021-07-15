@@ -32,3 +32,24 @@ anchors.forEach(function(item) {
     }, animationTime / framesCount);
   });
 });
+
+let flag = false;
+
+const mobileMenuButton = document.querySelector(".icon__menu");
+  const mobileMenu = document.querySelector(".header__topnav");
+
+  const openMenu = () => {
+    mobileMenuButton.addEventListener("click", () => {
+      if (flag === false) {
+        mobileMenuButton.classList.add("icon__menu--active");
+        mobileMenu.classList.add("header__topnav--active");
+        flag = true;
+      } else {
+        mobileMenuButton.classList.remove("icon__menu--active");
+        mobileMenu.classList.remove("header__topnav--active");
+        flag = false;
+      }
+    });
+  };
+
+  openMenu();
